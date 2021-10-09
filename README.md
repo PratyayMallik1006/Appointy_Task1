@@ -26,7 +26,8 @@ Here we will try to make our own RESTful API by using HTTP equest verbs and by u
 > These are very similar to CRUD, i.e, Create(POST), Read(GET), Update(PUT & PATCH), Delete
 
 ## Creating a Database with Robo 3T
-## Setting up the server
+![alt text](https://github.com/PratyayMallik1006/Appointy_Task1/blob/main/screenshots/Robo3T.PNG?raw=true)
+
 ## GET all users
 app.route("/users")
 
@@ -39,6 +40,9 @@ app.route("/users")
     }
   });
 })
+
+![alt text](https://github.com/PratyayMallik1006/Appointy_Task1/blob/main/screenshots/get%20all%20postman.PNG?raw=true)
+![alt text](https://github.com/PratyayMallik1006/Appointy_Task1/blob/main/screenshots/get%20all%20users.PNG?raw=true)
 ## POST a new user
 .post(function(req, res){
 
@@ -56,6 +60,8 @@ app.route("/users")
     }
   });
 })
+
+![alt text](https://github.com/PratyayMallik1006/Appointy_Task1/blob/main/screenshots/post.PNG?raw=true)
 ## Delete all users
 .delete(function(req, res){
 
