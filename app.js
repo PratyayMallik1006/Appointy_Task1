@@ -71,11 +71,11 @@ app.route("/users")
 
 ////////////////////////////////Requests Targetting A Specific User////////////////////////
 
-app.route("/users/:userTitle")
+app.route("/users/:userid")
 
 .get(function(req, res){
 
-  User.findOne({title: req.params.userTitle}, function(err, foundUser){
+  User.findOne({id: req.params.userid}, function(err, foundUser){
     if (foundUser) {
       res.send(foundUser);
     } else {
@@ -87,8 +87,8 @@ app.route("/users/:userTitle")
 .put(function(req, res){
 
   User.update(
-    {title: req.params.userTitle},
-    {title: req.body.title, content: req.body.content},
+    {id: req.params.userid},
+    {name: req.body.name, id: req.body.id},
     {overwrite: true},
     function(err){
       if(!err){
@@ -101,7 +101,7 @@ app.route("/users/:userTitle")
 .patch(function(req, res){
 
   User.update(
-    {title: req.params.userTitle},
+    {id: req.params.userid},
     {$set: req.body},
     function(err){
       if(!err){
@@ -116,7 +116,7 @@ app.route("/users/:userTitle")
 .delete(function(req, res){
 
   User.deleteOne(
-    {title: req.params.userTitle},
+    {id: req.params.userid},
     function(err){
       if (!err){
         res.send("Successfully deleted the corresponding user.");
